@@ -6,6 +6,9 @@ import pickle
 from tensorflow.python.keras.models import load_model
 from tensorflow.python.keras.preprocessing.sequence import pad_sequences
 import numpy as np
+from tensorflow.python import keras
+
+keras.backend.clear_session()
 
 class IntentClassifier:
     def __init__(self,classes,model,tokenizer,label_encoder):
