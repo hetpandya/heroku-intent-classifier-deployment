@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intent Classifier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-sm-5 row-sm-offset-1">
+          <h4>Enter a sentence to test Intent Classifier</h4>
+            <form role="form" method='POST' action='/'>
+              <div class="form-group">
+                <input type="text" name="sentence" class="form-control" id="url-box" placeholder="Enter a sentence" style="max-width: 300px;" autofocus required>
+              </div>
+              <button type="submit" class="btn btn-default">Predict</button>
+            </form>
+          <br>
+      </div>
+      
+
+      <div class="row-sm-5 row-sm-offset-1">
+          {% if result %}
+          <h4>Sentence : {{ result[0] }}</h4>
+          <h4>Predicted Intent : {{ result[1] }}</h4>
+          {% endif %}
+      </div>
+
+    </div>
+    
+  </body>
+</html>
