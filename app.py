@@ -8,6 +8,19 @@ from tensorflow.python.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import tensorflow as tf
 
+global graph
+
+model = load_model('models/intents.h5')
+graph = tf.get_default_graph()
+with open('utils/classes.pkl','rb') as file:
+    classes = pickle.load(file)
+
+with open('utils/tokenizer.pkl','rb') as file:
+    tokenizer = pickle.load(file)
+
+with open('utils/label_encoder.pkl','rb') as file:
+    label_encoder = pickle.load(file)
+
 class IntentClassifier:
     def __init__(self,classes,model,tokenizer,label_encoder):
         self.classes = classes
@@ -25,20 +38,7 @@ class IntentClassifier:
 
 app = Flask(__name__)
 
-global graph
-
-model = load_model('models/intents.h5')
-graph = tf.get_default_graph()
-with open('utils/classes.pkl','rb') as file:
-    classes = pickle.load(file)
-
-with open('utils/tokenizer.pkl','rb') as file:
-    tokenizer = pickle.load(file)
-
-with open('utils/label_encoder.pkl','rb') as file:
-    label_encoder = pickle.load(file)
-
-      nlu = IntentClassifier(classes,model,tokenizer,label_encoder) 
+nlu = IntentClassifier(classes,model,tokenizer,label_encoder) 
 
 
 @app.route('/', methods=['GET', 'POST'])
