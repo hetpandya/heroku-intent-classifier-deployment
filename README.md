@@ -24,5 +24,8 @@ http://localhost:5000
 ### Screenshot
 ![Screenshot](https://github.com/horizons-ml/heroku-intent-classifier-deployment/raw/main/images/screenshot.PNG)
 
+### Demo
+[https://intentclassifier.herokuapp.com](https://intentclassifier.herokuapp.com)
+
 ### License
 Please check `LICENSE` for more details.
