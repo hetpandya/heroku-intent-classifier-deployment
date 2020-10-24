@@ -32,7 +32,7 @@ class IntentClassifier:
         self.text = [text]
         self.test_keras = self.tokenizer.texts_to_sequences(self.text)
         self.test_keras_sequence = pad_sequences(self.test_keras, maxlen=16, padding='post')
-        wtih graph.as_default():
+        with graph.as_default():
             self.pred = self.classifier.predict(self.test_keras_sequence)
         return self.label_encoder.inverse_transform(np.argmax(self.pred,1))[0]
 
