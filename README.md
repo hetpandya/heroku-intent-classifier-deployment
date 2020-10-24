@@ -1,6 +1,6 @@
 # Deploying Intent Classifier on Heroku
 
-Code for the medium blog post [Deploying Intent Classifier on Heroku]().
+Code for the medium blog post [Deploying Intent Classifier on Heroku](https://mlhorizons.medium.com/deploying-intent-classifier-on-heroku-a784c22a29fe).
 
 ## Local Deployment
 ### Requirements
