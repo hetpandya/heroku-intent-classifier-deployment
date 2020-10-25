@@ -12,8 +12,6 @@ global graph
 
 model = load_model('models/intents.h5')
 graph = tf.get_default_graph()
-with open('utils/classes.pkl','rb') as file:
-    classes = pickle.load(file)
 
 with open('utils/tokenizer.pkl','rb') as file:
     tokenizer = pickle.load(file)
@@ -22,8 +20,7 @@ with open('utils/label_encoder.pkl','rb') as file:
     label_encoder = pickle.load(file)
 
 class IntentClassifier:
-    def __init__(self,classes,model,tokenizer,label_encoder):
-        self.classes = classes
+    def __init__(self,model,tokenizer,label_encoder):
         self.classifier = model
         self.tokenizer = tokenizer
         self.label_encoder = label_encoder
@@ -38,7 +35,7 @@ class IntentClassifier:
 
 app = Flask(__name__)
 
-nlu = IntentClassifier(classes,model,tokenizer,label_encoder) 
+nlu = IntentClassifier(model,tokenizer,label_encoder) 
 
 
 @app.route('/', methods=['GET', 'POST'])
