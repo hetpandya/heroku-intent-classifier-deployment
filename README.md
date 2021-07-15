@@ -1,6 +1,6 @@
 # Deploying Intent Classifier on Heroku
 
-Code for the medium blog post [Deploying Intent Classifier on Heroku](https://medium.com/analytics-vidhya/deploying-intent-classifier-on-heroku-a784c22a29fe).
+Code for the medium blog post [Deploying Intent Classifier on Heroku](https://medium.com/geekculture/deploying-intent-classifier-on-heroku-a784c22a29fe).
 
 ## Local Deployment
 ### Requirements
